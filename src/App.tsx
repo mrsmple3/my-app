@@ -1,11 +1,17 @@
-import React, { createElement as e, useState } from "react";
-import { Prodact } from "./conmponents/Prodact";
+import { Route, Routes } from "react-router-dom";
+import { ProdactPage } from "./pages/ProdactPage";
+import { AboutPage } from "./pages/AboutPage";
+import { Navigation } from "./conmponents/Navigation";
+
 function App() {
-  const [count, setCount] = useState(0);
   return (
-    <div className="container mx-auto max-w-2xl">
-      <Prodact />
-    </div>
+    <>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<ProdactPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
+    </>
   );
 }
 
